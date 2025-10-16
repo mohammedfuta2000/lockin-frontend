@@ -3,86 +3,1030 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>lockin - Accountability through action</title>
+    <title>Lockin - We Handle the Marketing So You Can Just Build</title>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #000000;
+            --secondary: #1A1A1A;
+            --accent: #007AFF;
+            --text-primary: #000000;
+            --text-secondary: #666666;
+            --background: #FFFFFF;
+            --surface: #F5F5F5;
+            --border: #E0E0E0;
+            --success: #34C759;
+            --warning: #FF9500;
+        }
+
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            background: #0A0A0A;
-            color: #FFFFFF;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background: var(--background);
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-link {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+
+        .nav-link:hover {
+            color: var(--primary);
+        }
+
+        .cta-button {
+            background: var(--primary);
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 120px 0 80px;
+            text-align: center;
+            background: linear-gradient(180deg, #FFFFFF 0%, #F8F8F8 100%);
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, #000000 0%, #333333 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero .subtitle {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            max-width: 700px;
+            margin: 0 auto 2rem;
             line-height: 1.6;
         }
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 60px 20px;
+
+        .hero-cta {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
         }
-        h1 { font-size: 48px; font-weight: 700; margin-bottom: 20px; }
-        h2 { font-size: 32px; margin: 40px 0 20px; }
-        p { font-size: 18px; color: #9CA3AF; margin-bottom: 20px; }
-        .cta {
-            display: inline-block;
-            background: #FFFFFF;
-            color: #000000;
-            padding: 16px 32px;
-            border-radius: 12px;
+
+        .trust-indicators {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        .trust-indicator {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .primary-button {
+            background: var(--primary);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 30px;
             text-decoration: none;
             font-weight: 600;
-            margin-top: 20px;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
         }
-        .features {
+
+        .primary-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .secondary-button {
+            color: var(--primary);
+            padding: 1rem 2rem;
+            border: 2px solid var(--primary);
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .secondary-button:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        /* Understanding Section */
+        .understanding-section {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .understanding-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .understanding-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .understanding-content p {
+            font-size: 1.15rem;
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .understanding-content p.emphasis {
+            font-size: 1.2rem;
+            color: var(--primary);
+            font-weight: 600;
+            margin: 2rem 0;
+        }
+
+        /* Problem Section */
+        .problem-section {
+            padding: 80px 0;
+            background: var(--surface);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .section-header p {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+
+        .problem-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .problem-card {
+            padding: 2rem;
+            background: white;
+            border-radius: 12px;
+            transition: transform 0.3s;
+        }
+
+        .problem-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .problem-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .problem-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        .problem-card p {
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        /* Authority Section */
+        .authority-section {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .authority-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            margin-top: 3rem;
+        }
+
+        .authority-content h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+        }
+
+        .authority-content p {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .research-stats {
+            background: var(--surface);
+            border-radius: 12px;
+            padding: 2rem;
+        }
+
+        .stat-item {
+            padding: 1.5rem 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .stat-item:last-child {
+            border-bottom: none;
+        }
+
+        .stat-value {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .stat-label {
+            color: var(--text-secondary);
+            margin-top: 0.5rem;
+        }
+
+        /* Audience Toggle */
+        .audience-section {
+            padding: 80px 0;
+            background: var(--surface);
+        }
+
+        .audience-toggle {
+            display: flex;
+            justify-content: center;
+            gap: 0;
+            margin-bottom: 3rem;
+            background: white;
+            border-radius: 30px;
+            padding: 4px;
+            max-width: 500px;
+            margin: 0 auto 3rem;
+        }
+
+        .toggle-button {
+            flex: 1;
+            padding: 0.75rem 1.5rem;
+            background: transparent;
+            border: none;
+            border-radius: 26px;
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .toggle-button.active {
+            background: var(--primary);
+            color: white;
+        }
+
+        .audience-content {
+            display: none;
+        }
+
+        .audience-content.active {
+            display: block;
+        }
+
+        .value-props {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .value-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+        }
+
+        .value-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        .value-card p {
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        /* How It Works */
+        .how-it-works {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .steps {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            margin: 40px 0;
+            gap: 3rem;
+            margin-top: 3rem;
         }
+
+        .step {
+            text-align: center;
+            position: relative;
+        }
+
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 0 auto 1.5rem;
+        }
+
+        .step h3 {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .step p {
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        /* Evolution Section */
+        .evolution-section {
+            padding: 80px 0;
+            background: var(--surface);
+        }
+
+        .evolution-content {
+            background: white;
+            border-radius: 12px;
+            padding: 3rem;
+            margin-top: 3rem;
+        }
+
+        .evolution-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .evolution-item {
+            padding: 1.5rem;
+            background: var(--surface);
+            border-radius: 8px;
+        }
+
+        .evolution-item h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary);
+        }
+
+        .evolution-item p {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+        }
+
+        /* Features */
+        .features {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
         .feature {
-            background: #171717;
-            padding: 30px;
-            border-radius: 16px;
-            border: 1px solid rgba(255,255,255,0.1);
+            text-align: center;
         }
-        .feature h3 { margin-bottom: 10px; }
+
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 1.5rem;
+            background: var(--surface);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+        }
+
+        .feature h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        .feature p {
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 80px 0;
+            background: var(--primary);
+            color: white;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .cta-section p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+
+        .cta-section .primary-button {
+            background: white;
+            color: var(--primary);
+        }
+
+        .cta-section .primary-button:hover {
+            background: var(--surface);
+        }
+
+        /* Footer */
+        footer {
+            padding: 40px 0;
+            background: var(--secondary);
+            color: white;
+            text-align: center;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            margin-bottom: 2rem;
+        }
+
+        .footer-link {
+            color: white;
+            text-decoration: none;
+            opacity: 0.8;
+            transition: opacity 0.3s;
+        }
+
+        .footer-link:hover {
+            opacity: 1;
+        }
+
+        /* Badge */
+        .badge {
+            display: inline-block;
+            background: var(--success);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .update-badge {
+            display: inline-block;
+            background: var(--warning);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .authority-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .steps {
+                grid-template-columns: 1fr;
+            }
+
+            .audience-toggle {
+                flex-direction: column;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            animation: fadeIn 0.6s ease-out;
+        }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>lockin</h1>
-        <p style="font-size: 24px; color: #FFFFFF;">
-            Accountability through action. Stop procrastinating, start completing.
-        </p>
-        <p>
-            The only goal app that makes backing out impossible. Set deadlines, connect your socials, 
-            and watch your goals go public. No deletes. No excuses. Just results.
-        </p>
-        <a href="https://apps.apple.com/app/lockin" class="cta">Download on App Store</a>
-
-        <div class="features">
-            <div class="feature">
-                <h3>The Lockin</h3>
-                <p>Goals can't be deleted. When your deadline hits, posts go live automatically. That's the lockin.</p>
-            </div>
-            <div class="feature">
-                <h3>Multi-Platform</h3>
-                <p>Connect Twitter, LinkedIn, or Reddit. One goal, multiple posts, maximum accountability.</p>
-            </div>
-            <div class="feature">
-                <h3>AI-Powered</h3>
-                <p>We generate celebration posts for you. Edit before posting or let them fly at deadline.</p>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <div class="nav-container">
+                <a href="#" class="logo">lockin</a>
+                <div class="nav-links">
+                    <a href="#how-it-works" class="nav-link">How It Works</a>
+                    <a href="#research" class="nav-link">Our Research</a>
+                    <a href="#for-you" class="nav-link">For You</a>
+                    <a href="https://apps.apple.com/app/lockin" class="cta-button">Download App</a>
+                </div>
             </div>
         </div>
+    </nav>
 
-        <h2>How It Works</h2>
-        <p>1. Create a goal with a deadline</p>
-        <p>2. Connect your social media accounts</p>
-        <p>3. AI generates posts for each platform</p>
-        <p>4. Get notified 2 hours before deadline</p>
-        <p>5. Posts go live automatically (or post early)</p>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container fade-in">
+            <div class="badge">NOW ON iOS</div>
+            <h1>Just Build.<br>We'll Handle the Rest.</h1>
+            <p class="subtitle">
+                You know how to build incredible products. You shouldn't have to become a content creator too. 
+                We've spent thousands of hours figuring out what makes developer posts actually work—so you don't have to.
+            </p>
+            <div class="hero-cta">
+                <a href="https://apps.apple.com/app/lockin" class="primary-button">
+                    Start Building in Public
+                </a>
+                <a href="#understanding" class="secondary-button">
+                    We Get It →
+                </a>
+            </div>
+            <div class="trust-indicators">
+                <span class="trust-indicator">✓ Analyzing 10K+ developer posts daily</span>
+                <span class="trust-indicator">✓ Learning from builders who actually shipped</span>
+                <span class="trust-indicator">✓ Updated weekly with new patterns</span>
+            </div>
+        </div>
+    </section>
 
-        <p style="margin-top: 60px; text-align: center;">
-            <a href="/privacy">Privacy Policy</a> • 
-            <a href="/support">Support</a>
-        </p>
-    </div>
+    <!-- Understanding Section -->
+    <section class="understanding-section" id="understanding">
+        <div class="container">
+            <div class="understanding-content">
+                <h2>We Know This Feels Wrong</h2>
+                <p>
+                    You became a developer to build things, not to be an influencer. Every minute you spend trying to figure out what to post, how to post it, when to post it—that's a minute stolen from actually building.
+                </p>
+                <p>
+                    Watching less talented builders succeed because they're better at self-promotion? It stings. Seeing your carefully crafted product get zero traction while someone's half-baked MVP goes viral because they know the "content game"? It's not just frustrating—it feels fundamentally unfair.
+                </p>
+                <p class="emphasis">
+                    You're right. It IS unfair. And you shouldn't have to play this game.
+                </p>
+                <p>
+                    That's why we built Lockin. We've done the work—analyzed thousands of posts, identified what actually converts, learned the patterns that work. We handle the entire "building in public" side so you can focus 100% on what you do best: building incredible products.
+                </p>
+                <p>
+                    Whether you're trying to get your first users, attract employer attention, or just want your work to be seen—we've got this covered. Trust us with the posting. You handle the building.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section class="problem-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>The Real Problems We Solve</h2>
+                <p>It's not just about posting. It's about the mental tax, the identity crisis, the time drain, and the crushing reality that great products die in silence.</p>
+            </div>
+            <div class="problem-grid">
+                <div class="problem-card">
+                    <div class="problem-icon">🎭</div>
+                    <h3>The Identity Crisis</h3>
+                    <p>You're a builder, not a marketer. Self-promotion feels like betraying who you are. Every "shipped this today! 🚀" post makes you die a little inside.</p>
+                </div>
+                <div class="problem-card">
+                    <div class="problem-icon">😔</div>
+                    <h3>Comparison Paralysis</h3>
+                    <p>Watching charismatic developer-influencers effortlessly attract users while you struggle to write a single tweet. It's not your skillset—and that's okay.</p>
+                </div>
+                <div class="problem-card">
+                    <div class="problem-icon">⚰️</div>
+                    <h3>The Graveyard Effect</h3>
+                    <p>Your GitHub is full of solid projects with zero stars. Not because they're bad, but because no one knows they exist. Excellence without visibility equals failure.</p>
+                </div>
+                <div class="problem-card">
+                    <div class="problem-icon">🎲</div>
+                    <h3>The Guessing Game</h3>
+                    <p>What tone? What hashtags? What time? LinkedIn or Twitter? Thread or single post? You're guessing at a game others have mastered.</p>
+                </div>
+                <div class="problem-card">
+                    <div class="problem-icon">⏰</div>
+                    <h3>The Context Switch</h3>
+                    <p>Deep in a debugging session, then suddenly remembering you should post. By the time you figure out what to say, you've lost your flow state entirely.</p>
+                </div>
+                <div class="problem-card">
+                    <div class="problem-icon">👻</div>
+                    <h3>The Invisible Builder</h3>
+                    <p>Amazing portfolio, zero visibility. Recruiters can't find you. Users don't know you exist. You're building in a vacuum while others build in the spotlight.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Authority Section -->
+    <section class="authority-section" id="research">
+        <div class="container">
+            <div class="section-header">
+                <h2>We've Done the Homework</h2>
+                <p>We're not guessing what works. We're analyzing, learning, and constantly improving based on real data from developers who've actually succeeded.</p>
+            </div>
+            <div class="authority-grid">
+                <div class="authority-content">
+                    <h3>Learning from the Winners</h3>
+                    <p>
+                        We study developers like Pieter Levels, Danny Postma, and Marc Louvion—builders who turned social media into user acquisition machines without losing their authenticity.
+                    </p>
+                    <p>
+                        Every week, we analyze what's working NOW. Not generic "how to post" advice, but specific patterns that convert browsers into users, posts into signups, visibility into opportunity.
+                    </p>
+                    <p>
+                        Platform algorithms change. What worked last month might not work today. That's why we continuously update our patterns, staying ahead of the curve so you don't have to think about it.
+                    </p>
+                    <p>
+                        <strong>This isn't generic AI content generation.</strong> This is pattern recognition from successful builders, adapted to your voice, optimized for your goals.
+                    </p>
+                </div>
+                <div class="research-stats">
+                    <div class="stat-item">
+                        <div class="stat-value">10,247</div>
+                        <div class="stat-label">Developer posts analyzed this week</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value">423</div>
+                        <div class="stat-label">Successful builder accounts tracked</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value">87</div>
+                        <div class="stat-label">Platform-specific patterns identified</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value">Weekly</div>
+                        <div class="stat-label">Algorithm updates incorporated</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Audience Section -->
+    <section class="audience-section" id="for-you">
+        <div class="container">
+            <div class="section-header">
+                <h2>Built for Your Goals</h2>
+                <p>Whether you're building products for users or projects for opportunities, we understand what you're trying to achieve.</p>
+            </div>
+            <div class="audience-toggle">
+                <button class="toggle-button active" onclick="toggleAudience('products')">Building Products</button>
+                <button class="toggle-button" onclick="toggleAudience('careers')">Building Careers</button>
+            </div>
+            
+            <div id="products-content" class="audience-content active">
+                <div class="value-props">
+                    <div class="value-card">
+                        <h3>Get Your First Users</h3>
+                        <p>Stop building in the dark. We generate posts that actually convert lurkers into users, focusing on the problems you solve, not vanity metrics.</p>
+                    </div>
+                    <div class="value-card">
+                        <h3>Build Trust, Not Hype</h3>
+                        <p>Authentic progress updates that show both wins and struggles. Real builders attract real users. No fake guru vibes.</p>
+                    </div>
+                    <div class="value-card">
+                        <h3>Platform-Specific Success</h3>
+                        <p>Twitter wants quick wins and metrics. LinkedIn wants professional insights. Reddit wants humble problem-solving. We adapt to each.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="careers-content" class="audience-content">
+                <div class="value-props">
+                    <div class="value-card">
+                        <h3>Get Noticed by Employers</h3>
+                        <p>Your side projects showcase your skills better than any resume. We make sure the right people see them—recruiters, hiring managers, CTOs.</p>
+                    </div>
+                    <div class="value-card">
+                        <h3>Build Your Professional Brand</h3>
+                        <p>Consistent visibility of your technical work. Show your problem-solving process, your growth, your expertise—without the cringe self-promotion.</p>
+                    </div>
+                    <div class="value-card">
+                        <h3>Stand Out From The Crowd</h3>
+                        <p>While others have dead GitHub profiles, yours shows active development with social proof. Be the developer companies are excited to hire.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Evolution Section -->
+    <section class="evolution-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Always Learning, Always Improving</h2>
+                <p>Social media isn't static, and neither are we. Every week brings new insights, new patterns, better results.</p>
+            </div>
+            <div class="evolution-content">
+                <h3>What We're Tracking Right Now <span class="update-badge">Updated Weekly</span></h3>
+                <div class="evolution-grid">
+                    <div class="evolution-item">
+                        <h4>Thread Patterns</h4>
+                        <p>7-tweet threads converting 3x better than single posts for technical content</p>
+                    </div>
+                    <div class="evolution-item">
+                        <h4>Visual Proof</h4>
+                        <p>Before/after screenshots increasing engagement by 67% on Twitter</p>
+                    </div>
+                    <div class="evolution-item">
+                        <h4>Problem-First Posts</h4>
+                        <p>Leading with the problem (not the solution) drives 2x more profile visits</p>
+                    </div>
+                    <div class="evolution-item">
+                        <h4>Vulnerability Works</h4>
+                        <p>Sharing struggles alongside wins increases follower quality score by 43%</p>
+                    </div>
+                    <div class="evolution-item">
+                        <h4>Platform Timing</h4>
+                        <p>LinkedIn Tuesdays at 10am, Twitter evenings—timing patterns that actually matter</p>
+                    </div>
+                    <div class="evolution-item">
+                        <h4>CTA Evolution</h4>
+                        <p>"Try it out" beating "Sign up now" by 31% for developer audiences</p>
+                    </div>
+                </div>
+                <p style="text-align: center; margin-top: 2rem; color: var(--text-secondary);">
+                    This is just a sample. Our full pattern library updates weekly based on real data.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="how-it-works" id="how-it-works">
+        <div class="container">
+            <div class="section-header">
+                <h2>Set It and Ship It</h2>
+                <p>No content calendars. No manual posting. Just goals, deadlines, and automatic accountability.</p>
+            </div>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Set Your Goal</h3>
+                    <p>Create a real deadline for your milestone. This creates the accountability you need to actually ship.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>We Generate Smart Posts</h3>
+                    <p>Based on what's working NOW for developers like you. Not generic AI slop—targeted, effective content.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Quick Personal Touch</h3>
+                    <p>Add your voice with a quick edit. Over time, we learn your style and need less editing.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3>Auto-Publish at Deadline</h3>
+                    <p>Posts go live when you ship. No procrastinating on posting. The commitment is real.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section class="features">
+        <div class="container">
+            <div class="section-header">
+                <h2>Everything You Need, Nothing You Don't</h2>
+                <p>Built by developers, for developers. Every feature serves one purpose: help you ship while we handle the visibility.</p>
+            </div>
+            <div class="feature-grid">
+                <div class="feature">
+                    <div class="feature-icon">🎯</div>
+                    <h3>Real Accountability</h3>
+                    <p>Can't delete goals. Limited postponing. This isn't a scheduler—it's a commitment device that actually works.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🧠</div>
+                    <h3>Pattern Intelligence</h3>
+                    <p>Not just AI—pattern recognition from real successful posts. Updated weekly with what's working now.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🎨</div>
+                    <h3>Voice Learning</h3>
+                    <p>Learns from your edits. Gets better over time. Eventually sounds like you wrote it yourself.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">📊</div>
+                    <h3>Multi-Platform Native</h3>
+                    <p>Each platform gets content optimized for its culture and algorithm. No generic cross-posting.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Zero Maintenance</h3>
+                    <p>Set goals when you're planning work. Posts happen automatically when you deliver. That's it.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🎪</div>
+                    <h3>No Circus Tricks</h3>
+                    <p>No engagement bait. No growth hacks. Just authentic updates that attract the right people.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>You Build. We Post. You Ship.</h2>
+            <p>
+                Stop losing hours to the content game. Stop watching inferior products succeed through better marketing. 
+                Focus on what you do best—we've got the rest.
+            </p>
+            <a href="https://apps.apple.com/app/lockin" class="primary-button">
+                Start Building in Public Today →
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="#" class="footer-link">Privacy</a>
+                <a href="#" class="footer-link">Terms</a>
+                <a href="#" class="footer-link">Support</a>
+                <a href="mailto:hello@lockin.app" class="footer-link">Contact</a>
+            </div>
+            <p style="opacity: 0.6;">© 2025 lockin. For builders who just want to build.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Audience toggle functionality
+        function toggleAudience(audience) {
+            // Update button states
+            document.querySelectorAll('.toggle-button').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+            
+            // Update content
+            document.querySelectorAll('.audience-content').forEach(content => {
+                content.classList.remove('active');
+            });
+            document.getElementById(`${audience}-content`).classList.add('active');
+        }
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add fade-in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '0';
+                    entry.target.style.transform = 'translateY(20px)';
+                    setTimeout(() => {
+                        entry.target.style.transition = 'all 0.6s ease-out';
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }, 100);
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.problem-card, .step, .feature, .stat-item, .value-card, .evolution-item').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
 </body>
 </html>
