@@ -214,12 +214,7 @@
             margin: 2rem 0;
         }
 
-        /* Problem Section */
-        .problem-section {
-            padding: 80px 0;
-            background: var(--surface);
-        }
-
+        /* Section Header */
         .section-header {
             text-align: center;
             margin-bottom: 3rem;
@@ -239,52 +234,15 @@
             line-height: 1.7;
         }
 
-        .problem-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .problem-card {
-            padding: 2rem;
-            background: white;
-            border-radius: 12px;
-            transition: transform 0.3s;
-        }
-
-        .problem-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .problem-icon {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-        }
-
-        .problem-card h3 {
-            font-size: 1.3rem;
-            margin-bottom: 1rem;
-            color: var(--primary);
-        }
-
-        .problem-card p {
-            color: var(--text-secondary);
-            line-height: 1.6;
-        }
-
         /* Authority Section */
         .authority-section {
             padding: 80px 0;
-            background: white;
+            background: var(--surface);
         }
 
-        .authority-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-            margin-top: 3rem;
+        .authority-content {
+            max-width: 800px;
+            margin: 0 auto;
         }
 
         .authority-content h3 {
@@ -300,36 +258,44 @@
             margin-bottom: 1.5rem;
         }
 
-        .research-stats {
-            background: var(--surface);
+        .tracking-list {
+            background: white;
             border-radius: 12px;
             padding: 2rem;
+            margin-top: 2rem;
         }
 
-        .stat-item {
+        .tracking-list h4 {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+        }
+
+        .tracking-item {
             padding: 1.5rem 0;
             border-bottom: 1px solid var(--border);
         }
 
-        .stat-item:last-child {
+        .tracking-item:last-child {
             border-bottom: none;
         }
 
-        .stat-value {
-            font-size: 2rem;
-            font-weight: 700;
+        .tracking-item strong {
             color: var(--primary);
+            display: block;
+            margin-bottom: 0.5rem;
         }
 
-        .stat-label {
+        .tracking-item p {
             color: var(--text-secondary);
-            margin-top: 0.5rem;
+            font-size: 1rem;
+            margin: 0;
         }
 
         /* Audience Toggle */
         .audience-section {
             padding: 80px 0;
-            background: var(--surface);
+            background: white;
         }
 
         .audience-toggle {
@@ -337,7 +303,7 @@
             justify-content: center;
             gap: 0;
             margin-bottom: 3rem;
-            background: white;
+            background: var(--surface);
             border-radius: 30px;
             padding: 4px;
             max-width: 500px;
@@ -377,7 +343,7 @@
         }
 
         .value-card {
-            background: white;
+            background: var(--surface);
             padding: 2rem;
             border-radius: 12px;
         }
@@ -396,7 +362,7 @@
         /* How It Works */
         .how-it-works {
             padding: 80px 0;
-            background: white;
+            background: var(--surface);
         }
 
         .steps {
@@ -433,43 +399,6 @@
         .step p {
             color: var(--text-secondary);
             line-height: 1.6;
-        }
-
-        /* Evolution Section */
-        .evolution-section {
-            padding: 80px 0;
-            background: var(--surface);
-        }
-
-        .evolution-content {
-            background: white;
-            border-radius: 12px;
-            padding: 3rem;
-            margin-top: 3rem;
-        }
-
-        .evolution-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .evolution-item {
-            padding: 1.5rem;
-            background: var(--surface);
-            border-radius: 8px;
-        }
-
-        .evolution-item h4 {
-            font-size: 1.1rem;
-            margin-bottom: 0.5rem;
-            color: var(--primary);
-        }
-
-        .evolution-item p {
-            font-size: 0.95rem;
-            color: var(--text-secondary);
         }
 
         /* Features */
@@ -580,16 +509,6 @@
             margin-bottom: 1rem;
         }
 
-        .update-badge {
-            display: inline-block;
-            background: var(--warning);
-            color: white;
-            padding: 0.25rem 0.75rem;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: 600;
-        }
-
         /* Mobile Responsive */
         @media (max-width: 768px) {
             .nav-links {
@@ -598,10 +517,6 @@
 
             .hero h1 {
                 font-size: 2.5rem;
-            }
-
-            .authority-grid {
-                grid-template-columns: 1fr;
             }
 
             .steps {
@@ -640,7 +555,7 @@
                     <a href="#how-it-works" class="nav-link">How It Works</a>
                     <a href="#research" class="nav-link">Our Research</a>
                     <a href="#for-you" class="nav-link">For You</a>
-                    <a href="https://apps.apple.com/app/lockin" class="cta-button">Download App</a>
+                    <a href="https://apps.apple.com/gh/app/lockin-goals/id6753622898" class="cta-button">Download App</a>
                 </div>
             </div>
         </div>
@@ -652,11 +567,11 @@
             <div class="badge">NOW ON iOS</div>
             <h1>Just Build.<br>We'll Handle the Rest.</h1>
             <p class="subtitle">
-                You know how to build incredible products. You shouldn't have to become a content creator too. 
-                We've spent thousands of hours figuring out what makes developer posts actually work—so you don't have to.
+                You know how to build incredible products. You shouldn't have to become a content creator too—and you definitely shouldn't settle for another unfinished project collecting dust.
+                We've spent thousands of hours solving both problems: a system that ensures you actually ship, paired with posts engineered to bring your first users and get you noticed by the right people.
             </p>
             <div class="hero-cta">
-                <a href="https://apps.apple.com/app/lockin" class="primary-button">
+                <a href="https://apps.apple.com/gh/app/lockin-goals/id6753622898" class="primary-button">
                     Start Building in Public
                 </a>
                 <a href="#understanding" class="secondary-button">
@@ -664,15 +579,32 @@
                 </a>
             </div>
             <div class="trust-indicators">
-                <span class="trust-indicator">✓ Analyzing 10K+ developer posts daily</span>
-                <span class="trust-indicator">✓ Learning from builders who actually shipped</span>
-                <span class="trust-indicator">✓ Updated weekly with new patterns</span>
+                <span class="trust-indicator">✓ Staying ahead of what resonates on social platforms</span>
+                <span class="trust-indicator">✓ Analyzing builders who ship and win</span>
             </div>
         </div>
     </section>
 
-    <!-- Understanding Section -->
+    <!-- Struggle Section -->
     <section class="understanding-section" id="understanding">
+        <div class="container">
+            <div class="understanding-content">
+                <h2>We Know the Struggle</h2>
+                <p>
+                    Most developers don't have a shipping problem. They have an accountability problem. When no one's watching, and the initial excitement has worn off, it's easy to let projects drift into "almost done" limbo forever. But when you commit publicly? When people are actually waiting to see what you build? Everything changes.
+                </p>
+                <p>
+                    That's the power of building in public—it creates an audience invested in your success. Lockin makes this effortless: set goals with real deadlines, and we automatically handle posting across your socials with content that actually works. Real people start following your journey, which becomes real pressure to actually ship. And when you do launch, you're not shouting into the void. You already have users waiting.
+                </p>
+                <p class="emphasis">
+                    The problem? Building in public means playing the social media content game.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Identity Crisis Section -->
+    <section class="understanding-section" style="background: var(--surface);">
         <div class="container">
             <div class="understanding-content">
                 <h2>We Know This Feels Wrong</h2>
@@ -686,7 +618,7 @@
                     You're right. It IS unfair. And you shouldn't have to play this game.
                 </p>
                 <p>
-                    That's why we built Lockin. We've done the work—analyzed thousands of posts, identified what actually converts, learned the patterns that work. We handle the entire "building in public" side so you can focus 100% on what you do best: building incredible products.
+                    That's why we built Lockin. We've done the work, and continue to do the work—analyzed thousands of posts, identified what actually converts, learned the patterns that work. We handle the entire "building in public" side so you can focus 100% on what you do best: building incredible products.
                 </p>
                 <p>
                     Whether you're trying to get your first users, attract employer attention, or just want your work to be seen—we've got this covered. Trust us with the posting. You handle the building.
@@ -695,87 +627,51 @@
         </div>
     </section>
 
-    <!-- Problem Section -->
-    <section class="problem-section">
-        <div class="container">
-            <div class="section-header">
-                <h2>The Real Problems We Solve</h2>
-                <p>It's not just about posting. It's about the mental tax, the identity crisis, the time drain, and the crushing reality that great products die in silence.</p>
-            </div>
-            <div class="problem-grid">
-                <div class="problem-card">
-                    <div class="problem-icon">🎭</div>
-                    <h3>The Identity Crisis</h3>
-                    <p>You're a builder, not a marketer. Self-promotion feels like betraying who you are. Every "shipped this today! 🚀" post makes you die a little inside.</p>
-                </div>
-                <div class="problem-card">
-                    <div class="problem-icon">😔</div>
-                    <h3>Comparison Paralysis</h3>
-                    <p>Watching charismatic developer-influencers effortlessly attract users while you struggle to write a single tweet. It's not your skillset—and that's okay.</p>
-                </div>
-                <div class="problem-card">
-                    <div class="problem-icon">⚰️</div>
-                    <h3>The Graveyard Effect</h3>
-                    <p>Your GitHub is full of solid projects with zero stars. Not because they're bad, but because no one knows they exist. Excellence without visibility equals failure.</p>
-                </div>
-                <div class="problem-card">
-                    <div class="problem-icon">🎲</div>
-                    <h3>The Guessing Game</h3>
-                    <p>What tone? What hashtags? What time? LinkedIn or Twitter? Thread or single post? You're guessing at a game others have mastered.</p>
-                </div>
-                <div class="problem-card">
-                    <div class="problem-icon">⏰</div>
-                    <h3>The Context Switch</h3>
-                    <p>Deep in a debugging session, then suddenly remembering you should post. By the time you figure out what to say, you've lost your flow state entirely.</p>
-                </div>
-                <div class="problem-card">
-                    <div class="problem-icon">👻</div>
-                    <h3>The Invisible Builder</h3>
-                    <p>Amazing portfolio, zero visibility. Recruiters can't find you. Users don't know you exist. You're building in a vacuum while others build in the spotlight.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- Authority Section -->
     <section class="authority-section" id="research">
         <div class="container">
             <div class="section-header">
-                <h2>We've Done the Homework</h2>
-                <p>We're not guessing what works. We're analyzing, learning, and constantly improving based on real data from developers who've actually succeeded.</p>
+                <h2>We've Done the Homework (And We Keep Doing It)</h2>
             </div>
-            <div class="authority-grid">
-                <div class="authority-content">
-                    <h3>Learning from the Winners</h3>
-                    <p>
-                        We study developers like Pieter Levels, Danny Postma, and Marc Louvion—builders who turned social media into user acquisition machines without losing their authenticity.
-                    </p>
-                    <p>
-                        Every week, we analyze what's working NOW. Not generic "how to post" advice, but specific patterns that convert browsers into users, posts into signups, visibility into opportunity.
-                    </p>
-                    <p>
-                        Platform algorithms change. What worked last month might not work today. That's why we continuously update our patterns, staying ahead of the curve so you don't have to think about it.
-                    </p>
-                    <p>
-                        <strong>This isn't generic AI content generation.</strong> This is pattern recognition from successful builders, adapted to your voice, optimized for your goals.
-                    </p>
-                </div>
-                <div class="research-stats">
-                    <div class="stat-item">
-                        <div class="stat-value">10,247</div>
-                        <div class="stat-label">Developer posts analyzed this week</div>
+            <div class="authority-content">
+                <p>
+                    We're not guessing what works. We analyze thousands of developer posts every week—studying builders like Pieter Levels, Danny Postma, and Marc Louvion who turned social media into user acquisition machines without losing their authenticity.
+                </p>
+                <p>
+                    Platform algorithms change. What worked last month might not work today. That's why we continuously update our patterns, staying ahead of the curve so you don't have to think about it.
+                </p>
+                
+                <div class="tracking-list">
+                    <h4>What we're tracking right now:</h4>
+                    
+                    <div class="tracking-item">
+                        <strong>Thread Patterns</strong>
+                        <p>7-tweet threads converting 3x better than single posts for technical content</p>
                     </div>
-                    <div class="stat-item">
-                        <div class="stat-value">423</div>
-                        <div class="stat-label">Successful builder accounts tracked</div>
+                    
+                    <div class="tracking-item">
+                        <strong>Visual Proof</strong>
+                        <p>Before/after screenshots increasing engagement by 67% on Twitter</p>
                     </div>
-                    <div class="stat-item">
-                        <div class="stat-value">87</div>
-                        <div class="stat-label">Platform-specific patterns identified</div>
+                    
+                    <div class="tracking-item">
+                        <strong>Problem-First Posts</strong>
+                        <p>Leading with the problem (not the solution) drives 2x more profile visits</p>
                     </div>
-                    <div class="stat-item">
-                        <div class="stat-value">Weekly</div>
-                        <div class="stat-label">Algorithm updates incorporated</div>
+                    
+                    <div class="tracking-item">
+                        <strong>Vulnerability Works</strong>
+                        <p>Sharing struggles alongside wins increases follower quality by 43%</p>
+                    </div>
+                    
+                    <div class="tracking-item">
+                        <strong>Platform Timing</strong>
+                        <p>LinkedIn Tuesdays at 10am, Twitter evenings—timing patterns that actually matter</p>
+                    </div>
+                    
+                    <div class="tracking-item">
+                        <strong>CTA Evolution</strong>
+                        <p>"Try it out" beating "Sign up now" by 31% for developer audiences</p>
                     </div>
                 </div>
             </div>
@@ -830,48 +726,6 @@
         </div>
     </section>
 
-    <!-- Evolution Section -->
-    <section class="evolution-section">
-        <div class="container">
-            <div class="section-header">
-                <h2>Always Learning, Always Improving</h2>
-                <p>Social media isn't static, and neither are we. Every week brings new insights, new patterns, better results.</p>
-            </div>
-            <div class="evolution-content">
-                <h3>What We're Tracking Right Now <span class="update-badge">Updated Weekly</span></h3>
-                <div class="evolution-grid">
-                    <div class="evolution-item">
-                        <h4>Thread Patterns</h4>
-                        <p>7-tweet threads converting 3x better than single posts for technical content</p>
-                    </div>
-                    <div class="evolution-item">
-                        <h4>Visual Proof</h4>
-                        <p>Before/after screenshots increasing engagement by 67% on Twitter</p>
-                    </div>
-                    <div class="evolution-item">
-                        <h4>Problem-First Posts</h4>
-                        <p>Leading with the problem (not the solution) drives 2x more profile visits</p>
-                    </div>
-                    <div class="evolution-item">
-                        <h4>Vulnerability Works</h4>
-                        <p>Sharing struggles alongside wins increases follower quality score by 43%</p>
-                    </div>
-                    <div class="evolution-item">
-                        <h4>Platform Timing</h4>
-                        <p>LinkedIn Tuesdays at 10am, Twitter evenings—timing patterns that actually matter</p>
-                    </div>
-                    <div class="evolution-item">
-                        <h4>CTA Evolution</h4>
-                        <p>"Try it out" beating "Sign up now" by 31% for developer audiences</p>
-                    </div>
-                </div>
-                <p style="text-align: center; margin-top: 2rem; color: var(--text-secondary);">
-                    This is just a sample. Our full pattern library updates weekly based on real data.
-                </p>
-            </div>
-        </div>
-    </section>
-
     <!-- How It Works -->
     <section class="how-it-works" id="how-it-works">
         <div class="container">
@@ -882,23 +736,18 @@
             <div class="steps">
                 <div class="step">
                     <div class="step-number">1</div>
-                    <h3>Set Your Goal</h3>
-                    <p>Create a real deadline for your milestone. This creates the accountability you need to actually ship.</p>
+                    <h3>Create Your Goal</h3>
+                    <p>Add a title, description, and deadline for your milestone. This creates the accountability you need to actually ship.</p>
                 </div>
                 <div class="step">
                     <div class="step-number">2</div>
-                    <h3>We Generate Smart Posts</h3>
-                    <p>Based on what's working NOW for developers like you. Not generic AI slop—targeted, effective content.</p>
+                    <h3>We Craft Your Post</h3>
+                    <p>Based on what's working NOW for developers like you. Review and edit to add your personal touch.</p>
                 </div>
                 <div class="step">
                     <div class="step-number">3</div>
-                    <h3>Quick Personal Touch</h3>
-                    <p>Add your voice with a quick edit. Over time, we learn your style and need less editing.</p>
-                </div>
-                <div class="step">
-                    <div class="step-number">4</div>
-                    <h3>Auto-Publish at Deadline</h3>
-                    <p>Posts go live when you ship. No procrastinating on posting. The commitment is real.</p>
+                    <h3>Auto-Publish</h3>
+                    <p>We alert you of upcoming posts at optimal times, with limited postpones before they're automatically published to your socials.</p>
                 </div>
             </div>
         </div>
@@ -954,7 +803,7 @@
                 Stop losing hours to the content game. Stop watching inferior products succeed through better marketing. 
                 Focus on what you do best—we've got the rest.
             </p>
-            <a href="https://apps.apple.com/app/lockin" class="primary-button">
+            <a href="https://apps.apple.com/gh/app/lockin-goals/id6753622898" class="primary-button">
                 Start Building in Public Today →
             </a>
         </div>
@@ -964,32 +813,28 @@
     <footer>
         <div class="container">
             <div class="footer-links">
-                <a href="#" class="footer-link">Privacy</a>
-                <a href="#" class="footer-link">Terms</a>
-                <a href="#" class="footer-link">Support</a>
-                <a href="mailto:hello@lockin.app" class="footer-link">Contact</a>
+                <a href="privacy.html" class="footer-link">Privacy</a>
+                <!-- <a href="#" class="footer-link">Terms</a> -->
+                <a href="support.html" class="footer-link">Support</a>
+                <a href="mailto:mohammedfuta2000@gmail.com" class="footer-link">Contact</a>
             </div>
             <p style="opacity: 0.6;">© 2025 lockin. For builders who just want to build.</p>
         </div>
     </footer>
 
     <script>
-        // Audience toggle functionality
         function toggleAudience(audience) {
-            // Update button states
             document.querySelectorAll('.toggle-button').forEach(btn => {
                 btn.classList.remove('active');
             });
             event.target.classList.add('active');
             
-            // Update content
             document.querySelectorAll('.audience-content').forEach(content => {
                 content.classList.remove('active');
             });
             document.getElementById(`${audience}-content`).classList.add('active');
         }
 
-        // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -1003,7 +848,6 @@
             });
         });
 
-        // Add fade-in animation on scroll
         const observerOptions = {
             threshold: 0.1,
             rootMargin: '0px 0px -50px 0px'
@@ -1024,7 +868,7 @@
             });
         }, observerOptions);
 
-        document.querySelectorAll('.problem-card, .step, .feature, .stat-item, .value-card, .evolution-item').forEach(el => {
+        document.querySelectorAll('.step, .feature, .tracking-item, .value-card').forEach(el => {
             observer.observe(el);
         });
     </script>
