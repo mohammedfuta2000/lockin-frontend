@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lockin - We Handle the Marketing So You Can Just Build</title>
+    <title>Lockin - Build in Public, One Task at a Time</title>
     <style>
         * {
             margin: 0;
@@ -21,7 +21,6 @@
             --surface: #F5F5F5;
             --border: #E0E0E0;
             --success: #34C759;
-            --warning: #FF9500;
         }
 
         body {
@@ -87,17 +86,16 @@
             border-radius: 25px;
             text-decoration: none;
             font-weight: 500;
-            transition: transform 0.2s, box-shadow 0.2s;
+            transition: transform 0.2s;
         }
 
         .cta-button:hover {
             transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
         }
 
         /* Hero Section */
         .hero {
-            padding: 120px 0 80px;
+            padding: 140px 0 80px;
             text-align: center;
             background: linear-gradient(180deg, #FFFFFF 0%, #F8F8F8 100%);
         }
@@ -107,56 +105,26 @@
             font-weight: 800;
             line-height: 1.2;
             margin-bottom: 1.5rem;
-            background: linear-gradient(135deg, #000000 0%, #333333 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
         }
 
         .hero .subtitle {
             font-size: 1.25rem;
             color: var(--text-secondary);
-            max-width: 700px;
-            margin: 0 auto 2rem;
-            line-height: 1.6;
-        }
-
-        .hero-cta {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            align-items: center;
-            flex-wrap: wrap;
-            margin-bottom: 2rem;
-        }
-
-        .trust-indicators {
-            display: flex;
-            gap: 2rem;
-            justify-content: center;
-            align-items: center;
-            flex-wrap: wrap;
-            font-size: 0.9rem;
-            color: var(--text-secondary);
-        }
-
-        .trust-indicator {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
+            max-width: 850px;
+            margin: 0 auto 2.5rem;
+            line-height: 1.7;
         }
 
         .primary-button {
             background: var(--primary);
             color: white;
-            padding: 1rem 2rem;
+            padding: 1rem 2.5rem;
             border-radius: 30px;
             text-decoration: none;
             font-weight: 600;
             font-size: 1.1rem;
             transition: all 0.3s;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
+            display: inline-block;
         }
 
         .primary-button:hover {
@@ -164,57 +132,89 @@
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
         }
 
-        .secondary-button {
-            color: var(--primary);
-            padding: 1rem 2rem;
-            border: 2px solid var(--primary);
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1.1rem;
-            transition: all 0.3s;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .secondary-button:hover {
-            background: var(--primary);
-            color: white;
-        }
-
-        /* Understanding Section */
-        .understanding-section {
+        /* Philosophy Section */
+        .philosophy-section {
             padding: 80px 0;
             background: white;
         }
 
-        .understanding-content {
-            max-width: 800px;
+        .philosophy-content {
+            max-width: 900px;
             margin: 0 auto;
+        }
+
+        .philosophy-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            font-weight: 700;
+        }
+
+        .philosophy-content p {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            line-height: 1.8;
             text-align: center;
         }
 
-        .understanding-content h2 {
+        /* How It Works */
+        .how-it-works-section {
+            padding: 80px 0;
+            background: var(--surface);
+        }
+
+        .how-it-works-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .how-it-works-content h2 {
             font-size: 2.5rem;
+            margin-bottom: 3rem;
+            text-align: center;
+            font-weight: 700;
+        }
+
+        .step-box {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 12px;
             margin-bottom: 2rem;
+            border-left: 4px solid var(--primary);
         }
 
-        .understanding-content p {
-            font-size: 1.15rem;
-            color: var(--text-secondary);
-            line-height: 1.8;
-            margin-bottom: 1.5rem;
+        .step-number {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 50px;
+            font-weight: 700;
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
         }
 
-        .understanding-content p.emphasis {
-            font-size: 1.2rem;
+        .step-box h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
             color: var(--primary);
-            font-weight: 600;
-            margin: 2rem 0;
         }
 
-        /* Section Header */
+        .step-box p {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        /* Target Audience Section */
+        .audience-section {
+            padding: 80px 0;
+            background: white;
+        }
+
         .section-header {
             text-align: center;
             margin-bottom: 3rem;
@@ -222,80 +222,13 @@
 
         .section-header h2 {
             font-size: 2.5rem;
-            font-weight: 700;
             margin-bottom: 1rem;
+            font-weight: 700;
         }
 
         .section-header p {
-            font-size: 1.1rem;
-            color: var(--text-secondary);
-            max-width: 700px;
-            margin: 0 auto;
-            line-height: 1.7;
-        }
-
-        /* Authority Section */
-        .authority-section {
-            padding: 80px 0;
-            background: var(--surface);
-        }
-
-        .authority-content {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .authority-content h3 {
-            font-size: 1.8rem;
-            margin-bottom: 1.5rem;
-            color: var(--primary);
-        }
-
-        .authority-content p {
-            font-size: 1.1rem;
-            color: var(--text-secondary);
-            line-height: 1.8;
-            margin-bottom: 1.5rem;
-        }
-
-        .tracking-list {
-            background: white;
-            border-radius: 12px;
-            padding: 2rem;
-            margin-top: 2rem;
-        }
-
-        .tracking-list h4 {
             font-size: 1.2rem;
-            margin-bottom: 1.5rem;
-            color: var(--primary);
-        }
-
-        .tracking-item {
-            padding: 1.5rem 0;
-            border-bottom: 1px solid var(--border);
-        }
-
-        .tracking-item:last-child {
-            border-bottom: none;
-        }
-
-        .tracking-item strong {
-            color: var(--primary);
-            display: block;
-            margin-bottom: 0.5rem;
-        }
-
-        .tracking-item p {
             color: var(--text-secondary);
-            font-size: 1rem;
-            margin: 0;
-        }
-
-        /* Audience Toggle */
-        .audience-section {
-            padding: 80px 0;
-            background: white;
         }
 
         .audience-toggle {
@@ -306,7 +239,7 @@
             background: var(--surface);
             border-radius: 30px;
             padding: 4px;
-            max-width: 500px;
+            max-width: 600px;
             margin: 0 auto 3rem;
         }
 
@@ -330,144 +263,82 @@
 
         .audience-content {
             display: none;
+            max-width: 900px;
+            margin: 0 auto;
         }
 
         .audience-content.active {
             display: block;
         }
 
-        .value-props {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .value-card {
+        .scenario-box {
             background: var(--surface);
-            padding: 2rem;
+            padding: 2.5rem;
             border-radius: 12px;
         }
 
-        .value-card h3 {
-            font-size: 1.3rem;
-            margin-bottom: 1rem;
+        .scenario-box h3 {
+            font-size: 1.6rem;
+            margin-bottom: 1.5rem;
             color: var(--primary);
         }
 
-        .value-card p {
+        .scenario-box p {
+            font-size: 1.15rem;
             color: var(--text-secondary);
-            line-height: 1.6;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
         }
 
-        /* How It Works */
-        .how-it-works {
-            padding: 80px 0;
-            background: var(--surface);
+        .scenario-box ul {
+            list-style: none;
+            padding-left: 0;
         }
 
-        .steps {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 3rem;
-            margin-top: 3rem;
-        }
-
-        .step {
-            text-align: center;
+        .scenario-box li {
+            padding: 0.75rem 0;
+            padding-left: 2rem;
             position: relative;
+            color: var(--text-secondary);
+            font-size: 1.1rem;
         }
 
-        .step-number {
-            width: 60px;
-            height: 60px;
-            background: var(--primary);
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin: 0 auto 1.5rem;
-        }
-
-        .step h3 {
+        .scenario-box li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--success);
+            font-weight: bold;
             font-size: 1.2rem;
-            margin-bottom: 1rem;
-        }
-
-        .step p {
-            color: var(--text-secondary);
-            line-height: 1.6;
-        }
-
-        /* Features */
-        .features {
-            padding: 80px 0;
-            background: white;
-        }
-
-        .feature-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 3rem;
-            margin-top: 3rem;
-        }
-
-        .feature {
-            text-align: center;
-        }
-
-        .feature-icon {
-            width: 80px;
-            height: 80px;
-            margin: 0 auto 1.5rem;
-            background: var(--surface);
-            border-radius: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2rem;
-        }
-
-        .feature h3 {
-            font-size: 1.3rem;
-            margin-bottom: 1rem;
-            color: var(--primary);
-        }
-
-        .feature p {
-            color: var(--text-secondary);
-            line-height: 1.6;
         }
 
         /* CTA Section */
-        .cta-section {
+        .final-cta {
             padding: 80px 0;
             background: var(--primary);
             color: white;
             text-align: center;
         }
 
-        .cta-section h2 {
+        .final-cta h2 {
             font-size: 2.5rem;
             margin-bottom: 1.5rem;
         }
 
-        .cta-section p {
+        .final-cta p {
             font-size: 1.2rem;
-            margin-bottom: 2rem;
-            opacity: 0.9;
-            max-width: 600px;
+            max-width: 700px;
             margin: 0 auto 2rem;
+            opacity: 0.95;
+            line-height: 1.7;
         }
 
-        .cta-section .primary-button {
+        .final-cta .primary-button {
             background: white;
             color: var(--primary);
         }
 
-        .cta-section .primary-button:hover {
+        .final-cta .primary-button:hover {
             background: var(--surface);
         }
 
@@ -497,19 +368,6 @@
             opacity: 1;
         }
 
-        /* Badge */
-        .badge {
-            display: inline-block;
-            background: var(--success);
-            color: white;
-            padding: 0.25rem 0.75rem;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-        }
-
-        /* Mobile Responsive */
         @media (max-width: 768px) {
             .nav-links {
                 display: none;
@@ -519,306 +377,155 @@
                 font-size: 2.5rem;
             }
 
-            .steps {
-                grid-template-columns: 1fr;
-            }
-
             .audience-toggle {
                 flex-direction: column;
             }
         }
-
-        /* Animations */
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .fade-in {
-            animation: fadeIn 0.6s ease-out;
-        }
     </style>
 </head>
 <body>
-    <!-- Navigation -->
     <nav>
         <div class="container">
             <div class="nav-container">
                 <a href="#" class="logo">lockin</a>
                 <div class="nav-links">
-                    <a href="#how-it-works" class="nav-link">How It Works</a>
-                    <a href="#research" class="nav-link">Our Research</a>
-                    <a href="#for-you" class="nav-link">For You</a>
+                    <a href="#why" class="nav-link">Why This Works</a>
+                    <a href="#how" class="nav-link">How It Works</a>
                     <a href="https://apps.apple.com/gh/app/lockin-goals/id6753622898" class="cta-button">Download App</a>
                 </div>
             </div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
     <section class="hero">
-        <div class="container fade-in">
-            <div class="badge">NOW ON iOS</div>
-            <h1>Just Build.<br>We'll Handle the Rest.</h1>
+        <div class="container">
+            <h1>Build in Public,<br>One Task at a Time</h1>
             <p class="subtitle">
-                You know how to build incredible products. You shouldn't have to become a content creator too—and you definitely shouldn't settle for another unfinished project collecting dust.
-                We've spent thousands of hours solving both problems: a system that ensures you actually ship, paired with posts engineered to bring your first users and get you noticed by the right people.
-            </p>
-            <div class="hero-cta">
-                <a href="https://apps.apple.com/gh/app/lockin-goals/id6753622898" class="primary-button">
-                    Start Building in Public
-                </a>
-                <a href="#understanding" class="secondary-button">
-                    We Get It →
-                </a>
-            </div>
-            <div class="trust-indicators">
-                <span class="trust-indicator">✓ Staying ahead of what resonates on social platforms</span>
-                <span class="trust-indicator">✓ Analyzing builders who ship and win</span>
-            </div>
-        </div>
-    </section>
-
-    <!-- Struggle Section -->
-    <section class="understanding-section" id="understanding">
-        <div class="container">
-            <div class="understanding-content">
-                <h2>We Know the Struggle</h2>
-                <p>
-                    Most developers don't have a shipping problem. They have an accountability problem. When no one's watching, and the initial excitement has worn off, it's easy to let projects drift into "almost done" limbo forever. But when you commit publicly? When people are actually waiting to see what you build? Everything changes.
-                </p>
-                <p>
-                    That's the power of building in public—it creates an audience invested in your success. Lockin makes this effortless: set goals with real deadlines, and we automatically handle posting across your socials with content that actually works. Real people start following your journey, which becomes real pressure to actually ship. And when you do launch, you're not shouting into the void. You already have users waiting.
-                </p>
-                <p class="emphasis">
-                    The problem? Building in public means playing the social media content game.
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Identity Crisis Section -->
-    <section class="understanding-section" style="background: var(--surface);">
-        <div class="container">
-            <div class="understanding-content">
-                <h2>We Know This Feels Wrong</h2>
-                <p>
-                    You became a developer to build things, not to be an influencer. Every minute you spend trying to figure out what to post, how to post it, when to post it—that's a minute stolen from actually building.
-                </p>
-                <p>
-                    Watching less talented builders succeed because they're better at self-promotion? It stings. Seeing your carefully crafted product get zero traction while someone's half-baked MVP goes viral because they know the "content game"? It's not just frustrating—it feels fundamentally unfair.
-                </p>
-                <p class="emphasis">
-                    You're right. It IS unfair. And you shouldn't have to play this game.
-                </p>
-                <p>
-                    That's why we built Lockin. We've done the work, and continue to do the work—analyzed thousands of posts, identified what actually converts, learned the patterns that work. We handle the entire "building in public" side so you can focus 100% on what you do best: building incredible products.
-                </p>
-                <p>
-                    Whether you're trying to get your first users, attract employer attention, or just want your work to be seen—we've got this covered. Trust us with the posting. You handle the building.
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Authority Section -->
-    <section class="authority-section" id="research">
-        <div class="container">
-            <div class="section-header">
-                <h2>We've Done the Homework (And We Keep Doing It)</h2>
-            </div>
-            <div class="authority-content">
-                <p>
-                    We're not guessing what works. We analyze thousands of developer posts every week—studying builders like Pieter Levels, Danny Postma, and Marc Louvion who turned social media into user acquisition machines without losing their authenticity.
-                </p>
-                <p>
-                    Platform algorithms change. What worked last month might not work today. That's why we continuously update our patterns, staying ahead of the curve so you don't have to think about it.
-                </p>
-                
-                <div class="tracking-list">
-                    <h4>What we're tracking right now:</h4>
-                    
-                    <div class="tracking-item">
-                        <strong>Thread Patterns</strong>
-                        <p>7-tweet threads converting 3x better than single posts for technical content</p>
-                    </div>
-                    
-                    <div class="tracking-item">
-                        <strong>Visual Proof</strong>
-                        <p>Before/after screenshots increasing engagement by 67% on Twitter</p>
-                    </div>
-                    
-                    <div class="tracking-item">
-                        <strong>Problem-First Posts</strong>
-                        <p>Leading with the problem (not the solution) drives 2x more profile visits</p>
-                    </div>
-                    
-                    <div class="tracking-item">
-                        <strong>Vulnerability Works</strong>
-                        <p>Sharing struggles alongside wins increases follower quality by 43%</p>
-                    </div>
-                    
-                    <div class="tracking-item">
-                        <strong>Platform Timing</strong>
-                        <p>LinkedIn Tuesdays at 10am, Twitter evenings—timing patterns that actually matter</p>
-                    </div>
-                    
-                    <div class="tracking-item">
-                        <strong>CTA Evolution</strong>
-                        <p>"Try it out" beating "Sign up now" by 31% for developer audiences</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Audience Section -->
-    <section class="audience-section" id="for-you">
-        <div class="container">
-            <div class="section-header">
-                <h2>Built for Your Goals</h2>
-                <p>Whether you're building products for users or projects for opportunities, we understand what you're trying to achieve.</p>
-            </div>
-            <div class="audience-toggle">
-                <button class="toggle-button active" onclick="toggleAudience('products')">Building Products</button>
-                <button class="toggle-button" onclick="toggleAudience('careers')">Building Careers</button>
-            </div>
-            
-            <div id="products-content" class="audience-content active">
-                <div class="value-props">
-                    <div class="value-card">
-                        <h3>Get Your First Users</h3>
-                        <p>Stop building in the dark. We generate posts that actually convert lurkers into users, focusing on the problems you solve, not vanity metrics.</p>
-                    </div>
-                    <div class="value-card">
-                        <h3>Build Trust, Not Hype</h3>
-                        <p>Authentic progress updates that show both wins and struggles. Real builders attract real users. No fake guru vibes.</p>
-                    </div>
-                    <div class="value-card">
-                        <h3>Platform-Specific Success</h3>
-                        <p>Twitter wants quick wins and metrics. LinkedIn wants professional insights. Reddit wants humble problem-solving. We adapt to each.</p>
-                    </div>
-                </div>
-            </div>
-            
-            <div id="careers-content" class="audience-content">
-                <div class="value-props">
-                    <div class="value-card">
-                        <h3>Get Noticed by Employers</h3>
-                        <p>Your side projects showcase your skills better than any resume. We make sure the right people see them—recruiters, hiring managers, CTOs.</p>
-                    </div>
-                    <div class="value-card">
-                        <h3>Build Your Professional Brand</h3>
-                        <p>Consistent visibility of your technical work. Show your problem-solving process, your growth, your expertise—without the cringe self-promotion.</p>
-                    </div>
-                    <div class="value-card">
-                        <h3>Stand Out From The Crowd</h3>
-                        <p>While others have dead GitHub profiles, yours shows active development with social proof. Be the developer companies are excited to hire.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- How It Works -->
-    <section class="how-it-works" id="how-it-works">
-        <div class="container">
-            <div class="section-header">
-                <h2>Set It and Ship It</h2>
-                <p>No content calendars. No manual posting. Just goals, deadlines, and automatic accountability.</p>
-            </div>
-            <div class="steps">
-                <div class="step">
-                    <div class="step-number">1</div>
-                    <h3>Create Your Goal</h3>
-                    <p>Add a title, description, and deadline for your milestone. This creates the accountability you need to actually ship.</p>
-                </div>
-                <div class="step">
-                    <div class="step-number">2</div>
-                    <h3>We Craft Your Post</h3>
-                    <p>Based on what's working NOW for developers like you. Review and edit to add your personal touch.</p>
-                </div>
-                <div class="step">
-                    <div class="step-number">3</div>
-                    <h3>Auto-Publish</h3>
-                    <p>We alert you of upcoming posts at optimal times, with limited postpones before they're automatically published to your socials.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Features -->
-    <section class="features">
-        <div class="container">
-            <div class="section-header">
-                <h2>Everything You Need, Nothing You Don't</h2>
-                <p>Built by developers, for developers. Every feature serves one purpose: help you ship while we handle the visibility.</p>
-            </div>
-            <div class="feature-grid">
-                <div class="feature">
-                    <div class="feature-icon">🎯</div>
-                    <h3>Real Accountability</h3>
-                    <p>Can't delete goals. Limited postponing. This isn't a scheduler—it's a commitment device that actually works.</p>
-                </div>
-                <div class="feature">
-                    <div class="feature-icon">🧠</div>
-                    <h3>Pattern Intelligence</h3>
-                    <p>Not just AI—pattern recognition from real successful posts. Updated weekly with what's working now.</p>
-                </div>
-                <div class="feature">
-                    <div class="feature-icon">🎨</div>
-                    <h3>Voice Learning</h3>
-                    <p>Learns from your edits. Gets better over time. Eventually sounds like you wrote it yourself.</p>
-                </div>
-                <div class="feature">
-                    <div class="feature-icon">📊</div>
-                    <h3>Multi-Platform Native</h3>
-                    <p>Each platform gets content optimized for its culture and algorithm. No generic cross-posting.</p>
-                </div>
-                <div class="feature">
-                    <div class="feature-icon">⚡</div>
-                    <h3>Zero Maintenance</h3>
-                    <p>Set goals when you're planning work. Posts happen automatically when you deliver. That's it.</p>
-                </div>
-                <div class="feature">
-                    <div class="feature-icon">🎪</div>
-                    <h3>No Circus Tricks</h3>
-                    <p>No engagement bait. No growth hacks. Just authentic updates that attract the right people.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="cta-section">
-        <div class="container">
-            <h2>You Build. We Post. You Ship.</h2>
-            <p>
-                Stop losing hours to the content game. Stop watching inferior products succeed through better marketing. 
-                Focus on what you do best—we've got the rest.
+                Turn every task into proof of progress. Create accountability and build momentum, leaving a trail. For developers building projects that need to be seen.
             </p>
             <a href="https://apps.apple.com/gh/app/lockin-goals/id6753622898" class="primary-button">
-                Start Building in Public Today →
+                Start Building in Public →
             </a>
         </div>
     </section>
 
-    <!-- Footer -->
+    <section class="philosophy-section" id="why">
+        <div class="container">
+            <div class="philosophy-content">
+                <h2>Why Every Task Deserves a Post</h2>
+                <p>
+                    Most developers only post when they launch. By then, they've built in silence for months and have zero audience waiting. Building in public means posting about every meaningful task you complete—not just the big milestones. It's the consistent, authentic trail of progress that matters. For developers building projects to impress employers, each post is proof you're actively shipping and solving real problems. For developers building products that need users, each post drums up interest and creates momentum long before launch day.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="how-it-works-section" id="how">
+        <div class="container">
+            <div class="how-it-works-content">
+                <h2>How Lockin Works</h2>
+                
+                <div class="step-box">
+                    <span class="step-number">1</span>
+                    <h3>Create a Goal with a Deadline</h3>
+                    <p>
+                        Add a title, description, and deadline for your next task. "Ship authentication by Friday" or "Deploy landing page by Monday." Set it and commit.
+                    </p>
+                </div>
+
+                <div class="step-box">
+                    <span class="step-number">2</span>
+                    <h3>Review & Edit Your Auto-Generated Post</h3>
+                    <p>
+                        Lockin generates a post for each platform (Twitter, LinkedIn, etc.). Review it, edit it to match your voice, add specifics. You're refining, not starting from scratch.
+                    </p>
+                </div>
+
+                <div class="step-box">
+                    <span class="step-number">3</span>
+                    <h3>Deadline Hits, Post Goes Live</h3>
+                    <p>
+                        When your deadline arrives, your post automatically publishes across all connected platforms. You get a 2-hour warning. Limited postponing. No deleting. This is accountability that actually works.
+                    </p>
+                </div>
+
+                <div class="step-box">
+                    <span class="step-number">4</span>
+                    <h3>Build Your Trail, Task by Task</h3>
+                    <p>
+                        Each completed task adds to your public journey. Over time, you build a visible record of consistent progress that attracts the right attention—whether that's employers or early users.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="audience-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Built for Two Types of Builders</h2>
+                <p>Whether you're building for opportunities or building for users</p>
+            </div>
+
+            <div class="audience-toggle">
+                <button class="toggle-button active" onclick="toggleAudience('career')">Building for Career</button>
+                <button class="toggle-button" onclick="toggleAudience('product')">Building for Users</button>
+            </div>
+
+            <div id="career-content" class="audience-content active">
+                <div class="scenario-box">
+                    <h3>Building Projects to Get Noticed</h3>
+                    <p>
+                        You're building side projects to showcase your skills and get noticed by recruiters, hiring managers, and CTOs. But your GitHub is full of half-finished work that nobody knows about because you built in silence.
+                    </p>
+                    <p><strong>Building in public changes this:</strong></p>
+                    <ul>
+                        <li>Every task you complete becomes visible proof you're actively shipping</li>
+                        <li>Employers see your problem-solving process, not just finished projects</li>
+                        <li>Public deadlines force you to actually finish what you start</li>
+                        <li>Your consistent trail of progress keeps you top-of-mind for opportunities</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div id="product-content" class="audience-content">
+                <div class="scenario-box">
+                    <h3>Building Products That Need Users</h3>
+                    <p>
+                        You're building a SaaS, tool, or side project that you want people to actually use. You know you need early interest before launch, but you're building solo and don't have a marketing budget or audience yet.
+                    </p>
+                    <p><strong>Building in public changes this:</strong></p>
+                    <ul>
+                        <li>Build an audience while you build the product—no cold launch to zero people</li>
+                        <li>Each task you complete creates momentum and anticipation</li>
+                        <li>Early followers become your first users when you launch</li>
+                        <li>You validate features and get feedback before investing months of work</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="final-cta">
+        <div class="container">
+            <h2>Start Leaving Your Trail Today</h2>
+            <p>
+                Stop building in silence. Set tasks, let Lockin handle the posts, and build accountability that actually makes you ship. Download the app and start building in public, one task at a time.
+            </p>
+            <a href="https://apps.apple.com/gh/app/lockin-goals/id6753622898" class="primary-button">
+                Download Lockin →
+            </a>
+        </div>
+    </section>
+
     <footer>
         <div class="container">
             <div class="footer-links">
                 <a href="privacy.html" class="footer-link">Privacy</a>
-                <!-- <a href="#" class="footer-link">Terms</a> -->
                 <a href="support.html" class="footer-link">Support</a>
                 <a href="mailto:mohammedfuta2000@gmail.com" class="footer-link">Contact</a>
             </div>
-            <p style="opacity: 0.6;">© 2025 lockin. For builders who just want to build.</p>
+            <p style="opacity: 0.6;">© 2025 lockin. Build in public, one task at a time.</p>
         </div>
     </footer>
 
@@ -846,30 +553,6 @@
                     });
                 }
             });
-        });
-
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '0';
-                    entry.target.style.transform = 'translateY(20px)';
-                    setTimeout(() => {
-                        entry.target.style.transition = 'all 0.6s ease-out';
-                        entry.target.style.opacity = '1';
-                        entry.target.style.transform = 'translateY(0)';
-                    }, 100);
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.step, .feature, .tracking-item, .value-card').forEach(el => {
-            observer.observe(el);
         });
     </script>
 </body>
